@@ -27,6 +27,7 @@ If an extension other than this is used (such as .txt), it is treated the same a
 
 ## Example: Sync two state machines with OTCT, then convert the result into Stateflow.
 Suppose we have two state machines, "cat.fsm" and "mouse.fsm" in the folder OTCT\\ex1\\. We want to find the synchronous product of these using OTCT. Assume that otct.exe and OTCT_Stateflow.exe are located in the folder OTCT\\.
+
 **cat.fsm**
 ```
 initial.
@@ -41,6 +42,7 @@ tran.
 controllable.
 [alpha].
 ```
+
 **mouse.fsm**
 ```
 initial.
@@ -56,6 +58,7 @@ controllable.
 [gamma].
 ```
 We use the following OTCT batch file to construct the synchronous product of these two (printAsPDF is optional):
+
 **run.txt**
 ```
 cat = fsm(cat.fsm)
@@ -69,6 +72,7 @@ In Windows command prompt, navigate to OTCT\\ex1\\, then run:
 ..\otct.exe run.txt
 ```
 The resulting file "plant.fsm2" will be parsed with OTCT_Stateflow to produce a MATLAB script. Note the file extension .fsm2 used with the printByName() function. This is important for OTCT-Stateflow to parse the file correctly.
+
 **plant.fsm2**
 ```
 plant    # states: 4
